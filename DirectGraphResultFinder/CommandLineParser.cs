@@ -21,9 +21,13 @@ namespace DirectGraphResultFinder
             };
             try
             {
-               p.Parse(args);
+                p.Parse(args);
             }
             catch (OptionException)
+            {
+                showHelp = true;
+            }
+            catch
             {
                 showHelp = true;
             }
