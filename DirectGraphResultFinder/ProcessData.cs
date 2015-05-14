@@ -31,26 +31,29 @@ namespace DirectGraphResultFinder
             }
             var expectColumnForNumber = false;
             var arrayHoldingLines = textToParse.Split(LinkedData.link_line_separator);
-            var pointsToReturn = new LinkedData[arrayHoldingLines.Length];
+            var pointsToReturn = new List<LinkedData>();
             for (int linePosInData = 0; linePosInData < arrayHoldingLines.Length; linePosInData++)
             {
-                var columnsFromLine = arrayHoldingLines[linePosInData].Split(LinkedData.datapoint_column_separator);
-                if (columnsFromLine.Length > 3 || columnsFromLine.Length < 2) throw new ArgumentException(invalid_input_given_for_parsing);
-                int edgeId = linePosInData;
-                if (linePosInData == 0)
+                if (!String.IsNullOrEmpty(arrayHoldingLines[linePosInData]))
                 {
-                    expectColumnForNumber = (columnsFromLine.Length == column_possition_for_edge_id);
-                }
-                if (expectColumnForNumber)
-                {
-                    if (columnsFromLine.Length < column_possition_for_edge_id || !int.TryParse(columnsFromLine[2],out edgeId))
+                    var columnsFromLine = arrayHoldingLines[linePosInData].Split(LinkedData.datapoint_column_separator);
+                    if (columnsFromLine.Length > 3 || columnsFromLine.Length < 2) throw new ArgumentException(invalid_input_given_for_parsing);
+                    int edgeId = linePosInData;
+                    if (linePosInData == 0)
                     {
-                        throw new ArgumentException(invalid_edge_id_status);
+                        expectColumnForNumber = (columnsFromLine.Length == column_possition_for_edge_id);
                     }
+                    if (expectColumnForNumber)
+                    {
+                        if (columnsFromLine.Length < column_possition_for_edge_id || !int.TryParse(columnsFromLine[2], out edgeId))
+                        {
+                            throw new ArgumentException(invalid_edge_id_status);
+                        }
+                    }
+                    pointsToReturn.Add(new LinkedData(edgeId, new DataPoint(columnsFromLine[0]), new DataPoint(columnsFromLine[1])));
                 }
-                pointsToReturn[linePosInData] = new LinkedData(edgeId, new DataPoint(columnsFromLine[0]), new DataPoint(columnsFromLine[1]));
             }
-           return pointsToReturn;
+           return pointsToReturn.ToArray();
         }
 
         public static string exportInformation(DataPointRegion[] regionInformation)

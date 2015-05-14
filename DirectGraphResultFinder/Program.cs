@@ -59,9 +59,9 @@ namespace DirectGraphResultFinder
                     var output = ProcessData.exportInformation(givenInput);
                     File.WriteAllText(commandLineOptions.output_file, output);
                 }
-                catch
+                catch(Exception ex)
                 {
-                    writeMessage("Unknown error exporting groups!");
+                    writeMessage("Unknown error exporting groups:" + ex.ToString()+ "!");
                 }
                 
             }
