@@ -16,6 +16,11 @@ namespace DirectGraphResultFinder
         private static string invalid_input_given_for_parsing = "Input data can not be empty, it must be a path or data containing 2 to 3 columns separated by " + LinkedData.link_line_separator + "and " + LinkedData.datapoint_column_separator + " to delineate links(linkPointA,linkPointB,[linkEdgeID])!";
         private const string invalid_edge_id_status = "Input data must have the third column be a number representing the edge id, or must be left empty for the entire set of the data(in which case the edge id will be generated)!";
 
+        public static string exportInformation(string givenInput)
+        {
+            return exportInformation(findRegions(parseGivenInput(givenInput),null));
+        }
+
         public static LinkedData[] parseGivenInput(string inputGiven)
         {
             if (String.IsNullOrEmpty(inputGiven)) throw new ArgumentNullException(invalid_input_given_for_parsing);

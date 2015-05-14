@@ -13,9 +13,10 @@ namespace DirectGraphResultFinder
 
     public partial class BasicIODisplay : Form
     {
-        public BasicIODisplay()
+        public BasicIODisplay(string intialInput)
         {
             InitializeComponent();
+            txbInputText.Text = intialInput;
         }
 
         private void btnTakeActionOnText_Click(object sender, EventArgs e)

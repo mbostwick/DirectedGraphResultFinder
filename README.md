@@ -1,0 +1,1 @@
+This project is design to take a list of links and then assign those links to regions. The regions are based on what things connect to one anther.

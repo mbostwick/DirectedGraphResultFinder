@@ -49,7 +49,7 @@
     <Compile Include="TestGrouping.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DirectedGraphResultFinder\DirectGraphResultFinder.csproj">
+    <ProjectReference Include="..\DirectGraphResultFinder\DirectGraphResultFinder.csproj">
       <Project>{9F637B27-A309-481C-B73E-3B9686195100}</Project>
       <Name>DirectGraphResultFinder</Name>
     </ProjectReference>

@@ -1,20 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectGraphResultFinder", "DirectedGraphResultFinder\DirectGraphResultFinder.csproj", "{9F637B27-A309-481C-B73E-3B9686195100}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectGraphResultFinder", "DirectGraphResultFinder\DirectGraphResultFinder.csproj", "{9F637B27-A309-481C-B73E-3B9686195100}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectGraphResultFinder.Test", "DirectGraphResultFinder.Test\DirectGraphResultFinder.Test.csproj", "{C1559DBB-7267-4C96-8F7D-67381CA9D4EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4A836F8E-23EB-4DC4-8453-3C2F9BCAA6D1}"
 	ProjectSection(SolutionItems) = preProject
-		DirectedGraphResultFinder.vsmdi = DirectedGraphResultFinder.vsmdi
+		DirectGraphResultFinder.vsmdi = DirectGraphResultFinder.vsmdi
 		Local.testsettings = Local.testsettings
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = DirectedGraphResultFinder.vsmdi
+		CategoryFile = DirectGraphResultFinder.vsmdi
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
